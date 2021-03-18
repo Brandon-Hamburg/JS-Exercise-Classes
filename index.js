@@ -41,10 +41,32 @@ class Airplane {
           + It should return a string with `name` and `age`. Example: "Mary, 50"
   */
   
- class Person {
-    
-  }
-  
+class Person {
+  constructor(attributes) {
+    this.name = attributes.name,
+    this.age = attributes.age,
+    this.stomach = []
+  };
+  eat(someFood) {
+    if (this.stomach.length < 10) {
+      this.stomach.push(someFood);
+    };
+  };
+  poop() {
+    this.stomach = [];
+  };
+  toString() {
+    return `${this.name}, ${this.age}`
+  };
+}
+
+const brandon = new Person({
+  name: 'Brandon', 
+  age: 36,
+})
+console.log(brandon.toString())
+
+
   /*
     TASK 2
       - Write a Car class whose constructor initializes `model` and `milesPerGallon` from arguments.
