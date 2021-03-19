@@ -59,6 +59,11 @@ class Person {
     return `${this.name}, ${this.age}`
   };
 }
+const jack = new Person({
+  name: 'Jack',
+  age: 22
+}) 
+console.log(jack.toString())
 
   
 
@@ -78,10 +83,10 @@ class Person {
   
  class Car {
   constructor(attributes) {
-    this.model = attributes.model,
-    this.milesPerGallon = attributes.milesPerGallon,
-    this.tank = 0,
-    this.odometer = 0
+    this.model = attributes.model;
+    this.milesPerGallon = attributes.milesPerGallon;
+    this.tank = 0;
+    this.odometer = 0;
   };
     fill(gallons) {
       this.tank += gallons;
@@ -91,7 +96,7 @@ class Person {
       this.tank -= distance / milesPerGallon;
     }
     drive() {
-
+      return `I ran out of fuel at ${this.odometer} miles!`
     };  
   }
   
@@ -109,9 +114,9 @@ class Person {
   */
  class Lambdasian {
     constructor(attributes) {
-      this.name = attributes.name,
-      this.age = attributes.age, 
-      this.location = attributes.location
+      this.name = attributes.name;
+      this.age = attributes.age;
+      this.location = attributes.location;
     };
     speak(name) {
       return `Hello my name is ${this.name}, I am from ${this.location}.`
@@ -135,9 +140,9 @@ class Person {
  class Instructor extends Lambdasian {
    constructor (attributes) {
      super(attributes);
-     this.specialty = attributes.specialty,
-     this.favLanguage = attributes.favLanguage,
-     this.catchPhrase = attributes.catchPhrase
+     this.specialty = attributes.specialty;
+     this.favLanguage = attributes.favLanguage;
+     this.catchPhrase = attributes.catchPhrase;
    }
    demo(subject) {
     return `Today we are learning about ${subject}`
@@ -164,9 +169,9 @@ class Person {
  class Student extends Lambdasian {
     constructor(attributes) {
       super(attributes);
-      this.previousBackground = attributes.previousBackground,
-      this.className = attributes.className,
-      this.favSubjects = attributes.favSubjects
+      this.previousBackground = attributes.previousBackground;
+      this.className = attributes.className;
+      this.favSubjects = attributes.favSubjects;
      }
     listSubjects() {
       return this.favSubjects;
@@ -205,8 +210,8 @@ const brandon = new Student({
  class ProjectManager extends Instructor{
      constructor(attributes) {
       super(attributes);
-      this.gradClassName = attributes.gradClassName,
-      this.favInstructor = attributes.favInstructor
+      this.gradClassName = attributes.gradClassName;
+      this.favInstructor = attributes.favInstructor;
      }
      standUp(channel) {
       return `${this.name} announces to ${channel}, @channel standy times!`
