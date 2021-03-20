@@ -42,9 +42,9 @@ class Airplane {
   */
   
 class Person {
-  constructor(attributes) {
-    this.name = attributes.name,
-    this.age = attributes.age,
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
     this.stomach = []
   };
   eat(someFood) {
@@ -82,22 +82,26 @@ console.log(jack.toString())
   */
   
  class Car {
-  constructor(attributes) {
-    this.model = attributes.model;
-    this.milesPerGallon = attributes.milesPerGallon;
+  constructor(model, milesPerGallon) {
+    this.model = model;
+    this.milesPerGallon = milesPerGallon;
     this.tank = 0;
     this.odometer = 0;
   };
     fill(gallons) {
       this.tank += gallons;
-    }
+    };
     drive(distance) {
-      this.odometer += distance;
-      this.tank -= distance / milesPerGallon;
+      if ((this.tank - (distance/this.milesPerGallon)) <= 0 ){
+        let distanceTraveled = (this.tank * this.milesPerGallon);
+        this.odometer += distanceTraveled
+        this.tank = 0;
+        return `I ran out of fuel at ${distanceTraveled} miles!`
+      } else {
+          this.odometer += distance;
+          this.tank -= (distance / this.milesPerGallon);
+        }
     }
-    drive() {
-      return `I ran out of fuel at ${this.odometer} miles!`
-    };  
   }
   
   /*
